@@ -5,10 +5,13 @@ var countLetters = function countLetters(letters) {
 
   for (var i = 0; i < letters.length; i ++) {
     var letter = letters[i];
-    if (letter !== " ") {
-      letterCounts[letter] = 0;
-    }
-
+    if (letter !== " "){
+      if(letterCounts.hasOwnProperty(letter)) {
+        letterCounts[letter]++;
+      } else {
+        letterCounts[letter] = 1;
+      }
+    } 
   }
   return letterCounts;
 }
